@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+	<title>Corona Counter</title>
+</head>
+
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h1>Corona Counter</h1>
+				</div>
+				<div class="menu col-md-5 offset-1">
+					<nav>
+						<ul class="menu-list">
+							<li class="menu-item"><a href="">Stay Safe</a></li>
+							<li class="menu-item"><a href="">Mobile App</a></li>
+							<li class="menu-item"><a href="">Contacts</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 circle-small">
+					<div class="circle-small-stroke">
+						<div class="circle-small-inner">
+							<h2 class="small-count" id="death-count">0</h2>
+							<h3 class="small-circle-heading">Death</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 circle-big">
+					<div class="circle-big-stroke">
+						<div class="circle-big-inner">
+							<input type="text" class="location" value="World" list="location-list" id="location" onchange="count()">
+								<datalist id="location-list">
+									<option value="World">
+								</datalist>
+							<h2 class="big-count" id="infected-count">0</h2>
+							<h3 class="big-circle-heading">Infected</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 circle-small">
+					<div class="circle-small-stroke green">
+						<div class="circle-small-inner">
+							<h2 class="small-count" id="recovered-count">0</h2>
+							<h3 class="small-circle-heading">Recovered</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container statistic">
+		<div class="row">
+			<div class="statistic-window">
+				<div class="col-md-10 offset-1 location-statistic">
+					<h2 class="location-heading" id="location-heading">World</h2>
+					<h4 class="inline">Infected</h4>
+					<p class="inline">3%</p>
+					<progress class="location-bar infected-bar" id="file" value="3" max="100"> 32% </progress>
+					<h4 class="inline">Dead</h4>
+					<p class="inline">3%</p>
+					<progress class="location-bar dead-bar" id="file" value="3" max="100"> 32% </progress>
+					<h4 class="inline">Recovered</h4>
+					<p class="inline">3%</p>
+					<progress class="location-bar recovered-bar" id="file" value="3" max="100"> 32% </progress>
+				</div>
+				<div class="col-md-10 offset-1 location-today">
+					<h2 class="today-heading">Today</h2>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-3 offset-1 today-block">
+							<h3 class="today-count" id="today-dead">0</h3>
+							<h4 class="today-count-heading">Death</h4>
+							<div class="today-bar red"></div>
+						</div>
+						<div class="col-4 today-block">
+							<h3 class="today-count" id="today-infected">0</h3>
+							<h4 class="today-count-heading">Infected</h4>
+							<div class="today-bar blue"></div>
+						</div>
+						<div class="col-3 today-block">
+							<h3 class="today-count" id="today-recovered">0</h3>
+							<h4 class="today-count-heading">Recovered</h4>
+							<div class="today-bar green"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<p>&copy; Copyright 2020</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
