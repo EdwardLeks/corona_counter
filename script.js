@@ -1,19 +1,28 @@
 let corona = []
-let people = {"corona":{}}
+let people = {"corona":{}, "population":{}}
 
 async function getData(){
 	corona.push(fetch("https://pomber.github.io/covid19/timeseries.json").then(response => { 
 		return response.json()
 	}))
 
+	corona.push(fetch("https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-population.json").then(response => { 
+		return response.json()
+	}))
+
 	await Promise.all(corona).then(value => {
 		people["corona"] = value[0]
-		return people["corona"]
+		people["population"] = value[1]
+		return people
 	})
 	
 	count()
 	createOptions()
 }
+
+document.getElementById('location').addEventListener('click', function(){
+	document.getElementById('location').value = ""
+})
 
 function createOptions() {
 	select = document.getElementById('location-list');
@@ -45,9 +54,6 @@ function count(){
 			todayInfected += people['corona'][cntry][people['corona'][cntry].length - 1]['confirmed'] - people['corona'][cntry][people['corona'][cntry].length - 2]['confirmed']
 			todayDead += people['corona'][cntry][people['corona'][cntry].length - 1]['deaths'] - people['corona'][cntry][people['corona'][cntry].length - 2]['deaths']
 			todayRecovered += people['corona'][cntry][people['corona'][cntry].length - 1]['recovered'] - people['corona'][cntry][people['corona'][cntry].length - 2]['recovered']
-
-			console.log(todayInfected)
-
 		}
 	} else {
 		totalInfected = people['corona'][country][people['corona'][country].length - 1]['confirmed']
@@ -68,6 +74,40 @@ function count(){
 	document.getElementById('today-infected').innerHTML = todayInfected
 	document.getElementById('today-dead').innerHTML = todayDead
 	document.getElementById('today-recovered').innerHTML = todayRecovered
+
+	function population(){
+		currentPopulation = 0
+		if(country === "World"){
+			for(cntry in people['population']){
+				currentPopulation += Number(people['population'][cntry]['population'])
+			}
+		} else {
+			for(cntry in people['population']){
+				if(people['population'][cntry]['country'].includes(country)){
+					currentPopulation = Number(people['population'][cntry]['population'])
+				}
+			}
+			
+		}
+		function percentage(){
+			let infectedPercent = (totalInfected / currentPopulation) * 100
+			document.getElementById('infected-percent').innerHTML = infectedPercent.toFixed(1-Math.floor(Math.log(infectedPercent)/Math.log(10))) + "%"
+			document.getElementById('infected-percent-bar').value = infectedPercent
+
+			let deadPercent = (totalDead / currentPopulation) * 100
+			let critical = Math.round((totalDead / totalInfected) * 100)
+			document.getElementById('dead-percent').innerHTML = deadPercent.toFixed(1-Math.floor(Math.log(deadPercent)/Math.log(10))) + "%"
+			document.getElementById('dead-percent-bar').value = deadPercent
+			document.getElementById('dead-critical').innerHTML =  critical + "% Fatal"
+
+			let recoveryPercent = Math.round((totalRecovered / totalInfected) * 100)
+			document.getElementById('recovery-percent').innerHTML = recoveryPercent + "%"
+			document.getElementById('recovery-percent-bar').value = recoveryPercent
+			document.getElementById('recovery-remaining').innerHTML = (100 - recoveryPercent) + "% Remaining"
+		}
+		percentage()
+	}
+	population()
 }
 
 getData()

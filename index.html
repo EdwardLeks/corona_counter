@@ -20,9 +20,9 @@
 				<div class="menu col-md-5 offset-1">
 					<nav>
 						<ul class="menu-list">
-							<li class="menu-item"><a href="">Stay Safe</a></li>
-							<li class="menu-item"><a href="">Mobile App</a></li>
-							<li class="menu-item"><a href="">Contacts</a></li>
+							<li class="menu-item"><a href="#">Stay Safe</a></li>
+							<li class="menu-item"><a href="#">Mobile App</a></li>
+							<li class="menu-item"><a href="#">Contacts</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -37,7 +37,7 @@
 					<div class="circle-small-stroke">
 						<div class="circle-small-inner">
 							<h2 class="small-count" id="death-count">0</h2>
-							<h3 class="small-circle-heading">Death</h3>
+							<h3 class="small-circle-heading">Deaths</h3>
 						</div>
 					</div>
 				</div>
@@ -70,15 +70,28 @@
 			<div class="statistic-window">
 				<div class="col-md-10 offset-1 location-statistic">
 					<h2 class="location-heading" id="location-heading">World</h2>
+
 					<h4 class="inline">Infected</h4>
-					<p class="inline">3%</p>
-					<progress class="location-bar infected-bar" id="file" value="3" max="100"> 32% </progress>
+					<p class="inline" id="infected-percent">0%</p>
+					<progress class="location-bar infected-bar" id="infected-percent-bar" value="0" max="100"></progress>
+					<div class="infected-aditional">
+						<h5 id="infected-world">Something</h5>
+					</div>
+
 					<h4 class="inline">Dead</h4>
-					<p class="inline">3%</p>
-					<progress class="location-bar dead-bar" id="file" value="3" max="100"> 32% </progress>
+					<p class="inline" id="dead-percent">0%</p>
+					<progress class="location-bar dead-bar" id="dead-percent-bar" value="0" max="100"></progress>
+					<div class="dead-aditional">
+						<h5 id="dead-critical">Critical</h5>
+					</div>
+
 					<h4 class="inline">Recovered</h4>
-					<p class="inline">3%</p>
-					<progress class="location-bar recovered-bar" id="file" value="3" max="100"> 32% </progress>
+					<p class="inline" id="recovery-percent">0%</p>
+					<progress class="location-bar recovered-bar" id="recovery-percent-bar" value="0" max="100">0%</progress>
+					<div class="recovery-aditional">
+						<h5 id="recovery-remaining">Remaining</h5>
+					</div>
+
 				</div>
 				<div class="col-md-10 offset-1 location-today">
 					<h2 class="today-heading">Today</h2>

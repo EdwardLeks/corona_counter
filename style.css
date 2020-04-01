@@ -110,11 +110,14 @@ body {
           border: none;
           outline: none;
           text-align: center;
-          margin-bottom: 10px; }
+          margin-bottom: 10px;
+          border-bottom: 2px solid #fff; }
           .main .circle-big .circle-big-stroke .circle-big-inner .location::-webkit-calendar-picker-indicator {
+            width: 15px;
+            height: 15px;
             display: none; }
-          .main .circle-big .circle-big-stroke .circle-big-inner .location:focus {
-            border-bottom: 2px solid #fff; }
+          .main .circle-big .circle-big-stroke .circle-big-inner .location:focus::-webkit-calendar-picker-indicator {
+            display: block; }
         .main .circle-big .circle-big-stroke .circle-big-inner .big-count {
           font-family: "Open Sans", sans-serif;
           font-weight: bold;
@@ -132,7 +135,8 @@ body {
   background-color: #1D1E2F;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  margin-top: 106px; }
+  margin-top: 106px;
+  padding-bottom: 45px; }
   .statistic .statistic-window .location-statistic {
     margin-top: 40px; }
     .statistic .statistic-window .location-statistic .inline {
@@ -170,10 +174,46 @@ body {
         border-radius: 50px; }
     .statistic .statistic-window .location-statistic .infected-bar::-webkit-progress-value {
       background-color: #6271FF; }
+    .statistic .statistic-window .location-statistic .infected-bar:hover {
+      cursor: pointer; }
+      .statistic .statistic-window .location-statistic .infected-bar:hover::-webkit-progress-value {
+        background-color: #C4C4C4; }
+      .statistic .statistic-window .location-statistic .infected-bar:hover::-webkit-progress-bar {
+        background-color: #6271FF; }
+      .statistic .statistic-window .location-statistic .infected-bar:hover ~ .infected-aditional {
+        height: 30px; }
     .statistic .statistic-window .location-statistic .dead-bar::-webkit-progress-value {
       background-color: #F65D5D; }
+    .statistic .statistic-window .location-statistic .dead-bar:hover {
+      cursor: pointer; }
+      .statistic .statistic-window .location-statistic .dead-bar:hover::-webkit-progress-value {
+        background-color: #C4C4C4; }
+      .statistic .statistic-window .location-statistic .dead-bar:hover::-webkit-progress-bar {
+        background-color: #F65D5D; }
+      .statistic .statistic-window .location-statistic .dead-bar:hover ~ .dead-aditional {
+        height: 30px; }
     .statistic .statistic-window .location-statistic .recovered-bar::-webkit-progress-value {
       background-color: #00FF84; }
+    .statistic .statistic-window .location-statistic .recovered-bar:hover {
+      cursor: pointer; }
+      .statistic .statistic-window .location-statistic .recovered-bar:hover::-webkit-progress-value {
+        background-color: #C4C4C4; }
+      .statistic .statistic-window .location-statistic .recovered-bar:hover::-webkit-progress-bar {
+        background-color: #00FF84; }
+      .statistic .statistic-window .location-statistic .recovered-bar:hover ~ .recovery-aditional, .statistic .statistic-window .location-statistic .recovered-bar:hover ~ .dead-aditional, .statistic .statistic-window .location-statistic .recovered-bar:hover ~ .infected-aditional {
+        height: 30px; }
+    .statistic .statistic-window .location-statistic .recovery-aditional, .statistic .statistic-window .location-statistic .dead-aditional, .statistic .statistic-window .location-statistic .infected-aditional {
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      transition: 0.25s ease all; }
+      .statistic .statistic-window .location-statistic .recovery-aditional h5, .statistic .statistic-window .location-statistic .dead-aditional h5, .statistic .statistic-window .location-statistic .infected-aditional h5 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 200;
+        font-size: 18px;
+        color: #fff;
+        margin-top: 5px;
+        float: right; }
   .statistic .statistic-window .location-today .today-heading {
     font-family: "Open Sans", sans-serif;
     font-weight: normal;
