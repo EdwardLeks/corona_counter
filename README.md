@@ -1,5 +1,7 @@
-# Corona Counter
+# Corona Counter 
 Corona Counter is a simple website, that shows you the number of COVID-19 cases. It shows the number of dead and recovered people. Website is simple to use.
+
+**Version 0.1.0**
 
 [Website](https://edwardleks.github.io/corona_counter/)
 
