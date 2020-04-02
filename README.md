@@ -1,7 +1,7 @@
 # Corona Counter 
 Corona Counter is a simple website, that shows you the number of COVID-19 cases. It shows the number of dead and recovered people. Website is simple to use.
 
-Website was made as school team project for [Codesters Club](https://www.codesters.club/)
+Website was made as a school team project for [Codesters Club](https://www.codesters.club/)
 
 **Version 0.1.0**
 
