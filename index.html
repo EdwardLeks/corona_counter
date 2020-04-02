@@ -15,12 +15,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<h1>Corona Counter</h1>
+					<h1><img src="img/logo.svg" alt="logo">Corona Counter</h1>
 				</div>
 				<div class="menu col-md-5 offset-1">
 					<nav>
 						<ul class="menu-list">
-							<li class="menu-item"><a href="#">Stay Safe</a></li>
+							<li class="menu-item"><a href="#" class="stay-safe">Stay Safe</a></li>
 							<li class="menu-item"><a href="#">Mobile App</a></li>
 							<li class="menu-item"><a href="#">Contacts</a></li>
 						</ul>
@@ -30,7 +30,55 @@
 		</div>
 	</header>
 
-	<section class="main">
+	<div class="modal-screen" id="modal-screen">
+		<div class="modal" id="modal">
+
+			<div class="slide">
+				<div class="slide-content">
+					<img src="img/covid.png" alt="stay-safe">
+					<h3>Stay Safe</h3>
+					<p>Take care of your health and protect others by doing the following:</p>
+					<div class="startup-show">
+						<input type="checkbox" id="startup-check" name="startup" onclick="startModal()">
+						<label for="startup">Dont show on start</label>
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="slide-content">
+					<img src="img/water-tap.png" alt="stay-safe">
+					<h3>Wash your hands frequently</h3>
+					<p>Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.</p>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="slide-content">
+					<img src="img/quarantine.png" alt="stay-safe">
+					<h3>Avoid touching eyes, nose and mouth</h3>
+					<p>Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and can make you sick.</p>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="slide-content">
+					<img src="img/coronavirus.png" alt="stay-safe">
+					<h3>Practice respiratory hygiene</h3>
+					<p>Make sure you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately.</p>
+				</div>
+			</div>
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			
+			<div class="slider__dots" style="text-align:center">
+				<span class="slider__dots--dot" onclick="currentSlide(1)"></span>
+				<span class="slider__dots--dot" onclick="currentSlide(2)"></span>
+				<span class="slider__dots--dot" onclick="currentSlide(3)"></span>
+				<span class="slider__dots--dot" onclick="currentSlide(4)"></span>
+			</div>
+		</div>
+	</div>
+
+	<section class="main" id="main">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 circle-small">
@@ -100,7 +148,7 @@
 					<div class="row">
 						<div class="col-3 offset-1 today-block">
 							<h3 class="today-count" id="today-dead">0</h3>
-							<h4 class="today-count-heading">Death</h4>
+							<h4 class="today-count-heading">Deaths</h4>
 							<div class="today-bar red"></div>
 						</div>
 						<div class="col-4 today-block">
@@ -121,10 +169,16 @@
 	</section>
 
 	<footer class="footer">
-		<p>&copy; Copyright 2020</p>
+		<div class="container">
+			<div class="row">
+				<p>&copy; Copyright 2020, Developed by <a href="https://edwardleks.github.io/">Edward Leks</a></p>
+				<a href="https://github.com/EdwardLeks/corona_counter" class="os">Open Source</a>
+			</div>
+		</div>
 	</footer>
 
-	<script src="script.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/slider.js"></script>
 </body>
 
 </html>
