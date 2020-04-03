@@ -7,6 +7,7 @@ Website was made as a school team project for [Codesters Club](https://www.codes
 
 ## Versions (0.2.0)
 **0.1.0** - Base functionality
+
 **0.2.0** - Added responsiveness
 
 ## Images
