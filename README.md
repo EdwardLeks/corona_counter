@@ -31,8 +31,3 @@ Website does not have all functionality right now and have some bugs. Responsive
 [Twitter](https://twitter.com/home)
 
 [Instagram](https://www.instagram.com/edwardleks/)
-
-
-[Twitter](https://twitter.com/home)
-
-[Instagram](https://www.instagram.com/edwardleks/)
