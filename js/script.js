@@ -27,6 +27,14 @@ function startModal(){
 	}
 }
 
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
+
 document.addEventListener('click', function(e){
 	const cList = e.target.classList
 	if(cList.contains('stay-safe')){
